@@ -30,3 +30,8 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+yy = 2015
+mm = 4
+
+print(calendar.month(yy, mm))

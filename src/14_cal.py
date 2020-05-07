@@ -31,7 +31,26 @@ import sys
 import calendar
 from datetime import datetime
 
-yy = 2015
-mm = 4
 
-print(calendar.month(yy, mm))
+cal = calendar.TextCalendar()
+
+args = len(sys.argv)
+
+if args == 1:
+    month = datetime.now().month
+    year = datetime.now().year
+
+elif args == 2:
+    month = int(sys.argv[1])
+    year = datetime.now().year
+
+elif args == 3:
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+
+else:
+    print("Use format: calendar.py [month] [year]")
+    sys.exit(1)
+
+
+cal.prmonth(year, month)
